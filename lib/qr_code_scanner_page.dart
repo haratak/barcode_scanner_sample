@@ -34,7 +34,7 @@ class _QRCodeScannerPageState extends State<QRCodeScannerPage> {
         onQRViewCreated: (controller) {
           this.controller = controller;
           controller.scannedDataStream.listen((scanData) {
-            if (result?.code == scanData.code) {
+            if (result?.code != scanData.code) {
               setState(() {
                 result = scanData;
               });
